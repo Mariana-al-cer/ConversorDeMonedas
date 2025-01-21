@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class OpcionesLuri {
+
+    public static void main(String[] args) {
+        Scanner consulta = new Scanner(System.in);
+        boolean continuar = true;
+
+        while (continuar) {
+            System.out.println("--------------------------------------------------------------------");
+            System.out.println("-----------Bienvenido/a al conversor de monedas -----------");
+
+            // Selección de moneda de origen
+            System.out.println("-------Seleccione una divisa a convertir -----------");
+            System.out.println("--------------------------------------------------------------------");
+            String[] monedas = {"ARS", "BOB", "BRL", "CLP", "COP", "EUR", "GBP", "JPY", "MXN", "USD", "UYU"};
+            for (int i = 0; i < monedas.length; i++) {
+                System.out.printf("%d.- %s\n", i + 1, monedas[i]);
+            }
+            System.out.println("12.- Salir del programa");
+            System.out.print("Seleccione la moneda de origen: ");
+            int monedaOrigen = consulta.nextInt();
+
+            if (monedaOrigen == 12) {
+                System.out.println("Salió de la aplicación correctamente...");
+                break;
+            }
+
+            // Selección de moneda de destino
+            System.out.println("-------Seleccione la divisa a la que desea convertir -----------");
+            for (int i = 0; i < monedas.length; i++) {
+                System.out.printf("%d.- %s\n", i + 1, monedas[i]);
+            }
+            System.out.print("Seleccione la moneda de destino: ");
+            int monedaDestino = consulta.nextInt();
+
+            // Aquí puedes agregar la lógica para realizar la conversión
+            System.out.println("Convirtiendo de " + monedas[monedaOrigen - 1] + " a " + monedas[monedaDestino - 1]);
+
+            // Lógica de conversión...
+        }
+    }
+}
